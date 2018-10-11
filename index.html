@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tithe Calc App</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main class="container">
+    <section class="logo">
+      <img class="logo__img" src="./img/logo.svg" alt="Logo">
+    </section>
+    <section class="form"> 
+      <label for="income" class="label form__label">Your mounthly incomes</label>
+      <input class="form__input" type="text" id="income" maxlength="15" name="income">
+      <button id="button" class="form__buttom" type="button">Calc your tithe</button>
+    </section>
+    <section class="output__wrapper">
+      <p class="label output__label">The tithe is</p>
+      <p class="output" id="output">$999.999</p>
+    </section>
+  </main>
+  <script src="./js/main.js"></script>
+</body>
+</html>

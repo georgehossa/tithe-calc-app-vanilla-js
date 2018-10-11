@@ -1,0 +1,43 @@
+.container{
+  display: grid;
+  grid-template: auto / 1fr;
+  width: 320px;
+  justify-content: center;
+  // border: red solid 1px;
+  gap: 1rem;
+}
+.form{
+  &__buttom{
+    background-color: $green;
+    color: $white;
+    display: flex;
+    border: none;
+    border-radius: 7px;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: .7rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  &__input{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: .5rem auto;
+    border-radius: 10px;
+    border: solid #707070 .5px;
+    height: 46px;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    text-align: center;
+  }
+}
+.label, .output{
+  font-weight: $font__default--bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.output{
+  font-size: 2rem;
+}
