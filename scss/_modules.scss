@@ -59,4 +59,15 @@
 }
 .output{
   font-size: 2rem;
+  background-color: $grey;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  &:before{
+    content: "$";
+    margin-right: .2rem;
+  }
 }
