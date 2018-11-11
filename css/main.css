@@ -21,6 +21,11 @@ body {
   justify-content: center;
   gap: 1rem; }
 
+.form__buttoms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .form__buttom {
   background-color: #79A713;
   color: #ffffff;
@@ -36,6 +41,20 @@ body {
   padding: .7rem 1rem;
   font-size: 1rem;
   cursor: pointer; }
+  .form__buttom--reset {
+    background-color: #f0f0f0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: none;
+    border-radius: 7px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: .7rem 1rem;
+    font-size: 1rem;
+    cursor: pointer; }
 
 .form__input {
   display: -webkit-box;

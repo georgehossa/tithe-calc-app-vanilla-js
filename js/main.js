@@ -1,4 +1,5 @@
 const $button = document.querySelector('#button');
+const $resetButton = document.querySelector('#resetButton');
 const $income = document.querySelector('#income');
 const $output = document.querySelector('#output');
 const tithePercent = 0.10;
@@ -15,5 +16,9 @@ $button.addEventListener('click', () => {
   //$output.innerHTML = (roundNumber * tithePercent);
   let titheTotal = roundNumber * tithePercent
   $output.innerHTML = (titheTotal.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 0 }));
+})
 
+$resetButton.addEventListener('click', () => {
+  $income.value = '';
+  $output.innerHTML = ('')
 })
