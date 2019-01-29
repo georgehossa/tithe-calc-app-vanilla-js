@@ -24,6 +24,9 @@ function resetInput() {
 };
 
 // Fetch Bible API
+let book = 'GEN'
+let chapter = 1
+let verse = 1
 
 async function getBible(book, chapter, verse) {
   const uri = `https://try.readme.io/https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-01/passages/${book}.${chapter}.${verse}?content-type=json`
@@ -40,7 +43,6 @@ async function getBible(book, chapter, verse) {
     referrerPolicy: "no-referrer-when-downgrade",
     body: null
   })
-  var verse
   await fetch(req)
     .then( (response) => {
       if(response.ok){
@@ -51,16 +53,16 @@ async function getBible(book, chapter, verse) {
       }
     })
     .then( (jsonData) => {
-      console.log(jsonData.data.content)
-      let content = jsonData.data.content
-      return content[0].items
+      let content = jsonData.data.content[0].items[1].text
+      return content
     })
     .catch( (err) => {
       console.log('ERROR', err.message);
     })
 }
 
-const verseData = getBible('GEN', 1, 1)
+const verseData = getBible(book, chapter, verse)
+console.log(verseData.jsonData)
 
 //Button take input value
 $button.addEventListener('click', titheCalc)
