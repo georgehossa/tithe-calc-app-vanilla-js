@@ -23,34 +23,18 @@ function resetInput() {
 };
 
 // Fetch Bible API
-async function getVerse() {
-  let book = 'GEN'
-  let chapter = 1
-  let verse = 1
-  const uri = `https://try.readme.io/https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-01/passages/${book}.${chapter}.${verse}?content-type=json`
-  let h = new Headers();
-  h.append('accept', 'application/json')
-  h.append('api-key', 'ca2b23cb70ae4f58b953aa799df78b3d')
-  h.append('content-type', 'application/json')
+const verse = []
 
-  let req = new Request(uri, {
-    method: 'GET',
-    headers: h,
-    mode: 'cors',
-    referrer: 'https://docs.api.bible/v1.0/reference',
-    referrerPolicy: "no-referrer-when-downgrade",
-    body: null
-  })
-  const verseContent = []
-  await fetch(req)
-    .then( (response) => response.json())
-    .then( (jsonData) => verseContent.push(jsonData.data.content[0].items[1].text))
+fetch('https://developers.youversionapi.com/1.0/verse_of_the_day/1?version_id=1', {
+    headers: {
+        'X-YouVersion-Developer-Token': 'ChY3zDzH34aBkd42GfDl7i4rdXo',
+        'Accept-Language': 'es',
+        Accept: 'application/json',
+    }
+})
+.then((result) => result.json())
+.then((json) => verse.push(json.verse))
 
-  return verseContent
-}
-
-const verseData = getVerse()
-console.log(verseData)
 
 //Button take input value
 $button.addEventListener('click', titheCalc)
