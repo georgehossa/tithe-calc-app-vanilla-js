@@ -23,18 +23,21 @@ function resetInput() {
 };
 
 // Fetch Bible API
-const verse = []
-
-fetch('https://developers.youversionapi.com/1.0/verse_of_the_day/1?version_id=1', {
+let verseData = []
+fetch('https://developers.youversionapi.com/1.0/verse_of_the_day/30?version_id=1', {
     headers: {
         'X-YouVersion-Developer-Token': 'ChY3zDzH34aBkd42GfDl7i4rdXo',
-        'Accept-Language': 'es',
+        'Accept-Language': 'en',
         Accept: 'application/json',
     }
 })
-.then((result) => result.json())
-.then((json) => verse.push(json.verse))
+.then((response) => response.json())
+.then((data) => {
+  verseData.push(data.verse.text)
+})
 
+console.log(verseData)
+// Verse template
 
 //Button take input value
 $button.addEventListener('click', titheCalc)
