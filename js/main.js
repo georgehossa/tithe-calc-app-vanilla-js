@@ -13,7 +13,6 @@ function titheCalc() {
   const tithePercent = 0.10;
   let value = $income.value.replace(/,/g, '')
   let roundNumber = Number(value)
-  //$output.innerHTML = (roundNumber * tithePercent);
   let titheTotal = roundNumber * tithePercent
   $output.innerHTML = (titheTotal.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 }));
 };
@@ -24,11 +23,10 @@ function resetInput() {
 };
 
 // Fetch Bible API
-let book = 'GEN'
-let chapter = 1
-let verse = 1
-
-async function getBible(book, chapter, verse) {
+async function getVerse() {
+  let book = 'GEN'
+  let chapter = 1
+  let verse = 1
   const uri = `https://try.readme.io/https://api.scripture.api.bible/v1/bibles/de4e12af7f28f599-01/passages/${book}.${chapter}.${verse}?content-type=json`
   let h = new Headers();
   h.append('accept', 'application/json')
@@ -43,26 +41,16 @@ async function getBible(book, chapter, verse) {
     referrerPolicy: "no-referrer-when-downgrade",
     body: null
   })
+  const verseContent = []
   await fetch(req)
-    .then( (response) => {
-      if(response.ok){
-        return response.json()
-      }
-      else{
-        throw new Error('BAD HTTP Stuff')
-      }
-    })
-    .then( (jsonData) => {
-      let content = jsonData.data.content[0].items[1].text
-      return content
-    })
-    .catch( (err) => {
-      console.log('ERROR', err.message);
-    })
+    .then( (response) => response.json())
+    .then( (jsonData) => verseContent.push(jsonData.data.content[0].items[1].text))
+
+  return verseContent
 }
 
-const verseData = getBible(book, chapter, verse)
-console.log(verseData.jsonData)
+const verseData = getVerse()
+console.log(verseData)
 
 //Button take input value
 $button.addEventListener('click', titheCalc)
