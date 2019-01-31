@@ -21,18 +21,7 @@
     padding: .7rem 1rem;
     font-size: 1rem;
     cursor: pointer;
-    &--reset{
-      background-color: $grey;
-      display: flex;
-    border: none;
-    border-radius: 7px;
-    justify-content: center;
-    margin: 1rem auto;
-    padding: .7rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    }
-    &--copy{
+    &--reset, &--copy{
       background-color: $grey;
       display: flex;
     border: none;
