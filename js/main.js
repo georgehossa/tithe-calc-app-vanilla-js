@@ -1,16 +1,16 @@
-const $button = document.querySelector("#button");
-const $resetButton = document.querySelector("#resetButton");
-const $copyButton = document.querySelector("#copyButton");
-const $income = document.querySelector("#income");
-const $output = document.querySelector("#output");
-const $container = document.querySelector("main");
-const $verse = document.querySelector(".verse");
+const $button = document.querySelector("#button")
+const $resetButton = document.querySelector("#resetButton")
+const $copyButton = document.querySelector("#copyButton")
+const $income = document.querySelector("#income")
+const $output = document.querySelector("#output")
+const $container = document.querySelector("main")
+const $verse = document.querySelector(".verse")
 
 //input mask by Cleave
 var cleave = new Cleave(".income", {
   numeral: true,
   numeralThousandsGroupStyle: "thousand"
-});
+})
 
 //Calc Function
 function titheCalc() {
