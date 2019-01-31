@@ -7,10 +7,10 @@
   gap: 1rem;
 }
 .form{
-  &__buttoms{
+  &__buttons{
     display: flex;
   }
-  &__buttom{
+  &__button{
     background-color: $green;
     color: $white;
     display: flex;
@@ -32,7 +32,19 @@
     font-size: 1rem;
     cursor: pointer;
     }
+    &--copy{
+      background-color: $grey;
+      display: flex;
+    border: none;
+    border-radius: 7px;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: .7rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    }
   }
+
   &__input{
     display: flex;
     justify-content: center;

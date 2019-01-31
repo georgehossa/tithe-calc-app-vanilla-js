@@ -13,7 +13,10 @@ body {
   font-family: "IBM Plex Sans", sans-serif; }
 
 .container {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: auto;
+  -ms-grid-columns: 1fr;
   grid-template: auto / 1fr;
   width: 320px;
   -webkit-box-pack: center;
@@ -21,12 +24,12 @@ body {
   justify-content: center;
   gap: 1rem; }
 
-.form__buttoms {
+.form__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
-.form__buttom {
+.form__button {
   background-color: #79A713;
   color: #ffffff;
   display: -webkit-box;
@@ -41,7 +44,21 @@ body {
   padding: .7rem 1rem;
   font-size: 1rem;
   cursor: pointer; }
-  .form__buttom--reset {
+  .form__button--reset {
+    background-color: #f0f0f0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: none;
+    border-radius: 7px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: .7rem 1rem;
+    font-size: 1rem;
+    cursor: pointer; }
+  .form__button--copy {
     background-color: #f0f0f0;
     display: -webkit-box;
     display: -ms-flexbox;
