@@ -1,0 +1,31 @@
+{
+  "name": "tithe-calc-app-vanilla",
+  "version": "1.0.0",
+  "description": "Simple Tithe Calc App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgehossa/tithe-calc-app-vanilla-js.git"
+  },
+  "keywords": [
+    "Tithe",
+    "Calc"
+  ],
+  "author": "Jorge Ossa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jorgehossa/tithe-calc-app-vanilla-js/issues"
+  },
+  "homepage": "https://github.com/jorgehossa/tithe-calc-app-vanilla-js#readme",
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
