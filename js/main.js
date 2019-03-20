@@ -7,6 +7,7 @@ const $container = document.querySelector('main');
 const $verse = document.querySelector('.verse');
 
 // input mask by Cleave
+// eslint-disable-next-line no-undef
 const cleave = new Cleave('.income', {
   numeral: true,
   numeralThousandsGroupStyle: 'thousand',
