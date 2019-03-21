@@ -8,7 +8,7 @@ module.exports = {
   context: path.resolve(__dirname),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
+    filename: 'js/[name].js',
   },
   module: {
     rules: [

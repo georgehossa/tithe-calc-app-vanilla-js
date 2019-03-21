@@ -3,6 +3,8 @@ This app is an exercise to practice Javascript
 
 ![alt text][logo]
 
-Here is the public url: [Tithe Calc](https://thithe-calc.netlify.com/)
+Here is the public url: [Tithe Calc](https://tithe-calc.netlify.com/)
 
-[logo]: ./img/titheApp-screenshot.png
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c4784e4b-e102-479f-a72c-c60b9883206c/deploy-status)](https://app.netlify.com/sites/tithe-calc/deploys)
+
+[logo]: ./dist/img/titheApp-screenshot.png
