@@ -1,3 +1,13 @@
+// import '@babel/polyfill';
+import '../scss/main.scss';
+import Cleave from './lib/cleave';
+
+const { Bible } = require('./classes/Bible');
+
+const day = new Date().getDate(); // Get current date
+
+const bible = new Bible(day);
+
 const $button = document.querySelector('#button');
 const $resetButton = document.querySelector('#resetButton');
 const $copyButton = document.querySelector('#copyButton');
@@ -50,7 +60,12 @@ function resetInput() {
 }
 
 // Bible API
-const day = new Date().getDate(); // Get current date
+async function getBibleVerse() {
+  const data = await bible.getVerse(day);
+  console.log(data);
+}
+
+document.addEventListener('DOMContentLoaded', getBibleVerse);
 
 // Fetch Data
 fetch(
