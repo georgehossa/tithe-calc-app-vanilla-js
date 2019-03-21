@@ -3,10 +3,12 @@ import '../scss/main.scss';
 import Cleave from './lib/cleave';
 
 const { Bible } = require('./classes/Bible');
+const { Ui } = require('./classes/ui');
 
 const day = new Date().getDate(); // Get current date
 
 const bible = new Bible(day);
+const ui = new Ui();
 
 const $button = document.querySelector('#button');
 const $resetButton = document.querySelector('#resetButton');
@@ -33,8 +35,14 @@ function copyToClipboard(text) {
   document.body.removeChild(dummy);
 }
 
+// Bible API
+async function getBibleVerse() {
+  const data = await bible.getVerse(day);
+  ui.renderVerse(data);
+}
+
 // Calc Function
-function titheCalc() {
+async function titheCalc() {
   const tithePercent = 0.1;
   const value = $income.value.replace(/,/g, '');
   const roundNumber = Number(value);
@@ -43,13 +51,8 @@ function titheCalc() {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
-  const markdown = `
-    <span>${verseText}</span><br><br>
-    <a href="${verseLink}">${verseRef}</a>
-  `;
   $output.innerHTML = total;
-  $verse.innerHTML = markdown;
-  copyToClipboard(total);
+  await getBibleVerse();
 }
 
 // Reset Function
@@ -59,35 +62,7 @@ function resetInput() {
   $verse.innerHTML = '';
 }
 
-// Bible API
-async function getBibleVerse() {
-  const data = await bible.getVerse(day);
-  console.log(data);
-}
-
-document.addEventListener('DOMContentLoaded', getBibleVerse);
-
-// Fetch Data
-fetch(
-  `https://developers.youversionapi.com/1.0/verse_of_the_day/${day}?version_id=1`,
-  {
-    headers: {
-      'X-YouVersion-Developer-Token': 'ChY3zDzH34aBkd42GfDl7i4rdXo',
-      'Accept-Language': 'en',
-      Accept: 'application/json',
-    },
-  }
-)
-  .then(response => response.json())
-  .then(data => {
-    // Get data
-    verseText = data.verse.text;
-    verseRef = data.verse.human_reference;
-    verseLink = data.verse.url;
-
-    // Calling titheCalc Function
-    $button.addEventListener('click', titheCalc);
-  });
-
+// Calling titheCalc Function
+$button.addEventListener('click', titheCalc);
 // reset button
 $resetButton.addEventListener('click', resetInput);
