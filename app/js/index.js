@@ -20,10 +20,10 @@ const $verse = document.querySelector('.verse');
 
 // input mask by Cleave
 // eslint-disable-next-line no-undef
-const cleave = new Cleave('.income', {
+/* const cleave = new Cleave('.income', {
   numeral: true,
   numeralThousandsGroupStyle: 'thousand',
-});
+}); */
 
 // Copy function
 function copyToClipboard(text) {
