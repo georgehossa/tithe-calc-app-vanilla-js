@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack -p --mode production"
+    "build": "webpack -p --mode production",
+    "test": "snyk test"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "snyk": "^1.143.1"
   }
 }
