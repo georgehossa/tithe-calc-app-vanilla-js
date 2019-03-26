@@ -1,7 +1,7 @@
 // import '@babel/polyfill';
 import '../scss/main.scss';
-import Cleave from './lib/cleave';
 
+const Cleave = require('cleave.js');
 const { Bible } = require('./classes/Bible');
 const { Ui } = require('./classes/ui');
 
@@ -20,10 +20,10 @@ const $verse = document.querySelector('.verse');
 
 // input mask by Cleave
 // eslint-disable-next-line no-undef
-/* const cleave = new Cleave('.income', {
+const cleave = new Cleave('.income', {
   numeral: true,
   numeralThousandsGroupStyle: 'thousand',
-}); */
+});
 
 // Copy function
 function copyToClipboard(text) {
