@@ -80,6 +80,8 @@ module.exports = {
         to: 'img',
       },
     ]),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
 };
